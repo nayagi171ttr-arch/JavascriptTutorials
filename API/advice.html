@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            text-align: center;
+            margin-top:100px;
+            color:white;
+            font-size: 50px;
+        }
+        .btns{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .col{
+            color:blue !important;
+        }
+       
+    </style>
+</head>
+<body>
+    
+    <h1>Free Advice generator</h1>
+    <div class="btns">
+    <button type="button" onclick="getAdvice()" >Generate Advice</button>
+    </div>
+    <h1 id="emailid" class="col"></h1>
+    
+</body>
+<script>
+    async function getAdvice() {
+    const url = "https://api.adviceslip.com/advice";
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.slip.advice);
+    document.getElementById('emailid').innerText = data.slip.advice;
+}
+</script>
+</html>
+
+

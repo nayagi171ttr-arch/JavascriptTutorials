@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>CALCULATOR</h2>
+    <input id="text">
+    <button id="1" onclick="append('0')">0</button>
+    <button id="2" onclick="append('1')">1</button>
+    <button id="3" onclick="append('2')">2</button>
+    <button id="4" onclick="append('3')">3</button>
+    <button id="5" onclick="append('4')">4</button>
+    <button id="6" onclick="append('5')">5</button>
+    <button id="8" onclick="append('6')">6</button>
+    <button id="9" onclick="append('7')">7</button>
+    <button id="10" onclick="append('8')">8</button>
+    <button id="11" onclick="append('9')">9</button>
+    <button id="/" onclick="append('/')">/</button>
+    <button id="*" onclick="append('*')">*</button>
+    <button id="+" onclick="append('+')">+</button>
+    <button id="-" onclick="append('-')">-</button>
+    <button id="clear" onclick="clearfunc()">clear</button>
+    <button id="delete" onclick="deletefunc()">delete</button>
+    <button id="1" onclick="calculate()">=</button>
+</body>
+<script>
+    const text=document.getElementById('text');
+    function append(input){
+        text.value+=input;
+    }
+    function clearfunc(){
+        text.value="";
+    }
+    function deletefunc(){
+        text.value=text.value.slice(0,-1);
+    }
+   function calculate(){
+    try{
+        text.value=eval(text.value);
+    }
+    catch(error){
+        console.log('error');
+    }
+   }
+
+</script>
+</html>

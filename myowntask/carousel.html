@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   <style>
+    .carousel-control-prev,
+.carousel-control-next {
+    width: 50px;    
+    height: 50px;   
+    top: 50%;          
+    transform: translateY(-50%); 
+    background-color: rgba(0,0,0,0.5); 
+    border-radius: 50%;
+}
+    @media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+
+@media (min-width: 768px) {
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%); 
+    }
+    
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
+}
+
+.imageover{
+    position:absolute;
+    top:80%;
+    left:35%;
+}
+   </style>
+</head>
+<body id="bgcolor" style="background-color: white;color:black;">
+   
+    <button id="btn" onclick="change()">toggle</button>
+    
+    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <div class="col-md-3">
+                <div class="card card-body">
+                    <img src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body">
+                    <img src="https://t4.ftcdn.net/jpg/01/31/55/69/360_F_131556918_yBx0ms1saqWLuaVm1wNX2OP0lXZvBrVz.jpg" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body">
+                    <img src="https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="col-md-3">
+                <div class="card card-body">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/049/855/771/small/nature-background-high-resolution-wallpaper-for-a-serene-and-stunning-view-free-photo.jpg" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev bg-dark" href="#recipeCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" ></span>
+    </a>
+    <a class="carousel-control-next bg-dark" href="#recipeCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" ></span>
+    </a>
+</div>
+
+
+
+<!--Card-->
+<section>
+    <div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-md-3 mt-5 mb-5 rounded-5">
+            <div class="card">
+                <div class="card-title">
+                    <div class="position-relative">
+                    <img src="https://t3.ftcdn.net/jpg/01/77/14/32/360_F_177143288_8yenhiFQr1zX6gi8QDK6zeaLztDgxtuw.jpg" class="rounded-2" style="width:305px;height:300px;">
+                    <img src="https://plus.unsplash.com/premium_photo-1688740375397-34605b6abe48?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3xlbnwwfHwwfHx8MA%3D%3D" class="rounded-pill imageover"style="width:100px;height:100px;border:2px solid black;" >    
+                </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-center mt-5">Person One</h2>
+                    <p class="text-center"> the foundational, non-specialized information that forms the body of websites, documents, or media, including text, images, and lists.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex flex-row justify-content-center">
+                        <i class="bi bi-facebook me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-twitter me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-instagram me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-facebook me-2" style="font-size: 1rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <div class="col-md-3 mt-5 mb-5 rounded-5">
+            <div class="card">
+                <div class="card-title">
+                    <div class="position-relative">
+                    <img src="https://media.istockphoto.com/id/1371289822/photo/himalayan-village-town-of-kalpa-with-kailash-mountain-snow-peaks-at-himachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=ibz1ktqV34YlHk0FeSyBcoykG2IVViXNUxU2NLCGsg8=" class="rounded-2" style="width:305px;height:300px;">
+                    <img src="https://img.magnific.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80" class="rounded-pill imageover"style="width:100px;height:100px;border:2px solid black;" >    
+                </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-center mt-5">Person One</h2>
+                    <p class="text-center"> the foundational, non-specialized information that forms the body of websites, documents, or media, including text, images, and lists.</p>
+                </div>
+                    <div class="card-footer">
+                    <div class="d-flex flex-row justify-content-center">
+                        <i class="bi bi-facebook me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-twitter me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-instagram me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-facebook me-2" style="font-size: 1rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <div class="col-md-3 mt-5 mb-5 rounded-5">
+            <div class="card">
+                <div class="card-title">
+                    <div class="position-relative">
+                    <img src="https://m.media-amazon.com/images/I/71c2spCI29L.jpg" class="rounded-2" style="width:305px;height:300px;">
+                    <img src="https://writestylesonline.com/wp-content/uploads/2018/11/Three-Statistics-That-Will-Make-You-Rethink-Your-Professional-Profile-Picture-1024x1024.jpg" class="rounded-pill imageover"style="width:100px;height:100px;border:2px solid black;" >    
+                </div>
+                </div>
+                <div class="card-body">
+                    <h2 class="text-center mt-5">Person One</h2>
+                    <p class="text-center"> the foundational, non-specialized information that forms the body of websites, documents, or media, including text, images, and lists.</p>
+                </div>
+                    <div class="card-footer">
+                    <div class="d-flex flex-row justify-content-center">
+                        <i class="bi bi-facebook me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-twitter me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-instagram me-2" style="font-size: 1rem;"></i>
+                        <i class="bi bi-facebook me-2" style="font-size: 1rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+<!--Accordian-->
+<div class="container">
+<div class="accordion mb-5" id="accorparent">
+ <div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button" type="button"  data-bs-toggle="collapse" data-bs-target="#class1" data-bs-parent="accorparent">Accordian 1</button>
+    </h2>
+    <div class="collapse accordion collapse show" id="class1">
+    <div class="accordion-body">
+ HAAI content generated
+    </div>
+    </div>
+ </div>
+
+ <div class="accordion-item">
+  <h2 class="accordion-header">
+    <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#class2" data-bs-parent="accorparent">Accordion 2</button>
+  </h2>
+  <div id="class2" class="collapse accordion collapse">
+    <div class="accordion-body">
+        NEXTWEBBY COMPANY
+    </div>
+  </div>
+ </div>
+
+  <div class="accordion-item">
+  <h2 class="accordion-header">
+    <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#class3" data-bs-parent="accorparent">Accordion 3</button>
+  </h2>
+  <div id="class3" class="collapse accordion collapse">
+    <div class="accordion-body">
+     I am a Engineering graduate
+    </div>
+  </div>
+ </div>
+
+  <div class="accordion-item">
+  <h2 class="accordion-header">
+    <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#class4" data-bs-parent="accorparent">Accordion 4</button>
+  </h2>
+  <div id="class4" class="collapse accordion collapse">
+    <div class="accordion-body">
+         Learnt HTML,CSS,BOOTSTRAP and now JS
+    </div>
+  </div>
+ </div>
+
+  <div class="accordion-item">
+  <h2 class="accordion-header">
+    <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#class5" data-bs-parent="accorparent">Accordion 5</button>
+  </h2>
+  <div id="class5" class="collapse accordion collapse">
+    <div class="accordion-body">
+        I am Ranganayagi
+    </div>
+  </div>
+ </div>
+
+
+</div>
+</div>
+
+
+
+<!--Modals-->
+<div class="d-flex justify-content-center align-items-center">
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mymodal">Show</button>
+</div>
+<div class="modal" tabindex="-1" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">NEXTWEBBY</h2>
+                 <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>This is to just create a sample modal box</p>
+                <p>And this is the procedure</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger">Close</button>
+                <button class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    let items = document.querySelectorAll('#recipeCarousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 4 
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+        	next = items[0]
+      	}
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
+
+
+   const btn=document.querySelector('#btn');
+   const body=document.querySelector('body');
+   btn.addEventListener('click',function(){
+    if(body.style.backgroundColor==='white'){
+        body.style.backgroundColor='black';
+        body.style.color='white';
+    }
+    else if(body.style.backgroundColor==='black'){
+        body.style.background='white';
+         body.style.color='dark';
+    }
+   
+   })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>

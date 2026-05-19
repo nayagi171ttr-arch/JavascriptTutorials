@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Tournament Predictor</title>
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3c72;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #ff9800;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #e68900;
+            transform: scale(1.05);
+        }
+
+        #resultdisplay {
+            margin-top: 20px;
+        }
+
+        h2, h3 {
+            margin-top: 20px;
+        }
+
+        p {
+            background: #f4f6f8;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 6px 0;
+        }
+
+        hr {
+            margin: 20px 0;
+        }
+
+        .group-title {
+            color: #673ab7;
+        }
+
+        .qualified {
+            color: #2196f3;
+            font-weight: bold;
+        }
+
+        .quarter {
+            color: orange;
+        }
+
+        .semi {
+            color: crimson;
+        }
+
+        .final {
+            color: green;
+            font-size: 22px;
+            text-align: center;
+        }
+        .button-container {
+          position: sticky;
+          top: 0;
+           background: white;
+           padding: 10px;
+           z-index: 100;
+           display: flex;
+           justify-content: center;
+           gap: 10px;
+            border-bottom: 2px solid #ddd;
+          }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>IPL Tournament Predictor</h2>
+    <div class="button-container">
+    <button onclick="run()">Predict Winner</button>
+    <button onclick="runQuarterFinals()">Quarter Finals</button>
+    <button onclick="runSemiFinals()">Semi Finals</button>
+    <button onclick="runFinal()">Final</button>
+    </div>
+
+    <div id="resultdisplay"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

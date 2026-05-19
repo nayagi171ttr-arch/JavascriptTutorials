@@ -1,0 +1,195 @@
+:root {
+    --bg-green: #f1f5e9;
+    --border-color: #e0e0e0;
+    --admin-theme: #6c5ce7;
+    --user-theme: #00b894;
+}
+
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    background: #f0f2f5; 
+    margin: 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+}
+
+
+.hidden {
+     display: none !important;
+     }
+
+
+#login-page { 
+    background: white; 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    width: 320px; 
+    text-align: center; 
+}
+#login-page input { 
+    width: 100%; 
+    padding: 12px;
+     margin: 10px 0; 
+     border: 1px solid #ddd; 
+     border-radius: 6px; 
+     box-sizing: border-box;
+    }
+
+#login-page button {
+     width: 100%;
+    padding: 12px; 
+    background: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer; 
+    font-weight: bold;
+ }
+.error-text {
+     color: red; 
+     font-size: 12px; 
+     display: none; 
+    }
+.login-hint {
+     margin-top: 15px; 
+     font-size: 11px; 
+     color: #888; 
+    }
+
+
+#calendar-page { 
+    width: 95%; 
+    max-width: 1100px; 
+    background: white; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+}
+.toolbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 25px; 
+    border-bottom: 1px solid var(--border-color); 
+}
+
+.user-badge {
+     padding: 5px 15px; 
+     border-radius: 20px; 
+     font-size: 13px; 
+     font-weight: bold; 
+     color: white; 
+     margin-right: 10px; 
+    }
+
+.logout-btn {
+     background: #eee; 
+     border: 1px solid #ccc; 
+     margin-left: 10px; 
+     padding: 8px 12px; 
+     border-radius: 4px; 
+     cursor: pointer; 
+    }
+
+
+.weekday-header {
+     display: grid; 
+     grid-template-columns: repeat(7, 1fr); 
+     background: var(--bg-green); 
+     text-align: center; 
+     font-weight: bold; 
+     padding: 12px 0; 
+     border-bottom: 1px solid var(--border-color); 
+    }
+
+#calendar-grid {
+     display: grid; 
+     grid-template-columns: repeat(7, 1fr); 
+    }
+
+.day-cell { 
+    min-height: 110px; 
+    border-right: 1px solid #f0f0f0; 
+    border-bottom: 1px solid #f0f0f0; 
+    padding: 10px; cursor: pointer; 
+}
+
+.day-cell:hover { 
+    background: #fafafa; 
+}
+
+.desc-tag {
+     background: #d4edda; 
+     color: #155724; 
+     font-size: 11px; 
+     padding: 4px; 
+     border-radius: 4px; 
+     margin-top: 5px; 
+    }
+
+
+#modal { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.5); 
+    display: none; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 1000; 
+}
+
+.modal-box { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 8px; 
+    width: 350px; 
+}
+
+textarea { 
+    width: 100%; 
+    height: 100px; 
+    margin: 15px 0; 
+    padding: 10px; 
+    box-sizing: border-box; 
+}
+
+.permission-text { 
+    font-size: 12px; 
+    color: #d63031; 
+}
+
+.actions { 
+    display: flex; 
+    gap: 10px; 
+    justify-content: flex-end; 
+}
+
+.btn-save { 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 8px 15px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+.btn-del { 
+    background: #dc3545; 
+    color: white; 
+    border: none; 
+    padding: 8px 15px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+.btn-close { 
+    padding: 8px 15px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item.active,
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        display: flex !important; 
+    }
+
+
+    .carousel-item img {
+        width: 150px;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+}
+
+
+
+    .dropdown-menu{
+        background-color: blue;
+    
+    }
+    .dropdown-menu li a{
+        color:white;
+        font-weight: bold;
+    }
+  .nav-link:hover{
+    color:blue;
+    border-bottom:2px solid red;
+  }
+  .haibtn:hover{
+    color:blue !important;
+  }
+  .hovbtn:hover{
+    color:black !important;
+    background-color: orangered;
+  }
+
+  .imgover{
+    position:absolute;
+    top:60%;
+    right:0px;
+  }
+  .bgimgover{
+    position:absolute;
+    top:95%;
+  }
+  .girlimg{
+    overflow: hidden;
+    position:relative;
+    z-index: 1;
+  }
+  .gil{
+    z-index:2;
+  }
+
+
+  .animatetop{
+    animation:top 2s ease-in-out;
+    transition: 0.3s;
+  }
+  .animatedown{
+    animation:down 2s ease-in-out;
+    transition:0.3s;
+  }
+  @keyframes top{
+    0%{
+        opacity:0;
+        transform: translateY(-10px);
+       
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+  }
+  
+
+    @keyframes down{
+    0%{
+        opacity:0;
+        transform: translateY(10px);
+       
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+  }
+
+   .animatesideA{
+    animation:sideA 2s ease-in-out;
+    transition:0.3s;
+  }
+  @keyframes sideA{
+    0%{
+        opacity:0;
+        transform: translateX(-10px);
+       
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+  }
+
+     .animatesideB{
+    animation:sideB 2s ease-in-out;
+    transition:0.3s;
+  }
+  @keyframes sideB{
+    0%{
+        opacity:0;
+        transform: translateX(10px);
+       
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+  }
+
+  .btnhover:hover{
+    background-color:blue;
+    color:white !important;
+  }
+    .btnhover p:hover{
+    background-color:blue;
+    color:white !important;
+  }
+
+
+  .textover{
+    position:absolute;
+    top:20%;
+    left:10px;
+    writing-mode: vertical-lr;
+    transform:rotate(180deg);
+    font-size: 16px;
+    background-color: blue;
+    color:white;
+  }
+
+  .imphov:hover .textover{
+    background-color: orangered !important;
+  }
+
+
+.cardhover:hover {
+ color:blue !important;
+}
+
+.cardshadow:hover{
+    transform: translateY(-10px);
+    transition: 0.3s;
+    box-shadow: 0 0 30px gray;
+}
+.bighov{
+    position:absolute;
+    top:50%;
+    right:-10px;
+}
+
+
+@keyframes scroll-zoom {
+  from {
+    transform: scale(0.2); 
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1.5); 
+    opacity: 1;
+  }
+}
+
+.zoom-on-scroll {
+  animation: scroll-zoom linear both;
+  animation-timeline: view();
+  animation-range: entry 10% contain 60%;
+  will-change: transform; 
+}
+</style>
+</head>
+<body>
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top border border-2">
+        <div class="container d-flex justify-content-between">
+     <a href="#" class="navbar-brand fw-bold text-dark  d-flex align-items-center"><img src="https://thumbs.dreamstime.com/b/stack-colorful-books-one-open-book-center-vibrant-neatly-arranged-positioned-right-inviting-readers-374250938.jpg"class="ms-5 me-3 rounded-4" width="50px" height="50px"><span class="h2 fw-bold">Eduleb</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#links">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="links">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item ">Home 01</a></li>
+            <li><a href="#" class="dropdown-item">Home 02</a></li>
+          </ul>
+          </li>
+          <li class="nav-item"><a href="#" class="nav-link fw-bold">About</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle fw-bold" role="button" data-bs-toggle="dropdown">Course</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">Course 01</a></li>
+                <li><a href="#" class="dropdown-item">Course 02</a></li>
+            </ul>  
+        </li>
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle fw-bold" role="button" data-bs-toggle="dropdown">Pages</a>
+            <ul class="dropdown-menu">
+            <li><a href="#" class="dropdown-item">Instructor</a></li>
+            <li><a href="#" class="dropdown-item">Page Details</a></li>
+            <li><a href="#" class="dropdown-item">Pricing plan</a></li>
+            <li><a href="#" class="dropdown-item">Plan analysis</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle fw-bold" role="button" data-bs-toggle="dropdown">Blog</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-item">Blog</a></li>
+                <li><a href="#" class="dropdown-item">Blog details</a></li>
+            </ul>
+        </li>
+        <li class="nav-item fw-bold"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+    <div class="d-flex">
+        <button class="btn text-dark haibtn">Sign-In</button>
+        <button class="btn btn-primary text-light hovbtn">Sign-Up</button>
+    </div>
+    </div>
+    </nav>
+   
+   
+    <div class="position-relative">
+    <section style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/010/599/697/small_2x/abstract-smooth-curve-line-on-pink-gradient-lighting-color-background-vector.jpg');">
+    <div class="container">
+        <div class="row bgimgover">
+        <div class="col-md-3 gil">
+              <div class="d-flex flex-column bg-light rounded-3" style="width:250px;">
+                           <h2 class="text-dark text-center counter" data-target="4500"></h2>
+                           <h3 class="text-primary text-center">active students</h3>
+                 </div>
+         </div>
+
+            <div class="col-md-3 gil">
+              <div class="d-flex flex-column bg-light rounded-3" style="width:250px;">
+                           <h2 class="text-dark text-center counter" data-target="134">0</h2>
+                           <h3 class="text-primary text-center">Online courses</h3>
+                 </div>
+         </div>
+
+            <div class="col-md-3 gil">
+              <div class="d-flex flex-column bg-light rounded-3" style="width:250px;">
+                           <h2 class="text-dark text-center counter" data-target="299">0</h2>
+                           <h3 class="text-primary text-center">Academic programs</h3>
+                 </div>
+         </div>
+
+            <div class="col-md-3 gil">
+              <div class="d-flex flex-column bg-light rounded-3" style="width:250px;">
+                           <h2 class="text-dark text-center counter" data-target="800">0</h2>
+                           <h3 class="text-primary text-center">Certified syllabus</h3>
+                 </div>
+         </div>
+         </div>
+    </div>    
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex flex-column">
+                    <h1 class="text-dark display-3 fw-bold " style="margin-top:200px;"><span class="text-primary">Smart Study</span> Where Knowledge Meets the Web</h1>
+                    <p class="text-secondary h6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, consectetur adipiscing elit tempor ut labore</p>    
+                  <div class="input-group " style="margin-bottom: 90px;">
+                    <input type="text" placeholder="Search Your course here" class="border-0 form-control" style="height:80px;">
+                    <button class="btn btn-primary">Search</button>
+                  </div>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="position-relative">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/home-img2.png" width="500px" height="700px" style="margin-top:100px; margin-left:100px;" class="girlimg">
+                       <div class="imgover gil d-flex flex-column bg-light rounded-3" style="width:250px;">
+                           <h2 class="text-dark text-center">4500+</h2>
+                           <h3 class="text-primary text-center">active students</h3>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           </div>
+    </section>
+
+
+
+    
+    <section>
+        <div class="container">
+        <div class="row">
+           <div class="col-md-6">
+            <img src="https://nationalcolleges.co.in/Images/newflight.png" width="700px" height="500px" class="mt-5 zoom-on-scroll">
+           </div>
+
+           <div class="col-md-6 " style="margin-top:200px;">
+            <h2 class="text-danger">About Us</h2>
+            <p class="text-dark">National Institute of Management & Science (NIMS) is a leading institution offering career-focused programs in Aviation, Banking, Fashion Designing, and Logistics. With campuses in Madurai and Tirunelveli, we are committed to delivering practical, industry-oriented education that prepares students for real-world careers.</p>
+            <p class="text-dark"> combine classroom learning with hands-on training, internships, and dedicated placement support—preparing students for successful careers.</p>   
+        </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section style="margin-top:200px;background-image: url('https://png.pngtree.com/background/20210716/original/pngtree-light-blue-cute-striped-baby-blue-background-picture-image_1348681.jpg');"> 
+        <div class="d-flex flex-column" style="width:700px;margin-left:400px;">
+            <h2 class="text-dark text-center animatetop" style="margin-top:50px;">Start your journey With us</h2>
+            <p class="text-dark text-center animatetop">We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+        </div>
+        
+        <div class="container " style="margin-top:100px;">
+        <div class="row gx-5">
+            <div class="col-md-3">
+                <div class=" shadow bg-light mb-5 rounded-5 animatedown">
+                   <div class="d-flex flex-column">
+                    <div class="d-flex flex-row">
+                        <h2 class="badge text-dark mt-5 mb-4 rounded-pill" style="width:70px; height:50px;background-color: lavenderblush;"><span class="h3">01</span></h2>
+                         <h3 class="text-center text-dark mb-4 mt-5">Expert Teacher</h3>
+                    </div>
+                    <h6 class="text-dark mb-5 text-center">Lorem ipsum dolor sit amet, consectetur notted adipisicing elit ut labore.</h6>
+                   </div>    
+            </div>
+            </div>
+
+
+               <div class="col-md-3">
+                <div class="shadow bg-light mb-5 rounded-5 animatedown">
+                   <div class="d-flex flex-column">
+                    <div class="d-flex flex-row">
+                        <h2 class="badge text-dark mt-5 mb-4 rounded-pill" style="width:70px; height:50px;background-color: lavenderblush;"><span class="h3">01</span></h2>
+                         <h3 class="text-center text-dark mb-4 mt-5">Expert Teacher</h3>
+                    </div>
+                    <h6 class="text-dark mb-5 text-center">Lorem ipsum dolor sit amet, consectetur notted adipisicing elit ut labore.</h6>
+                   </div> 
+                   </div>   
+            </div>
+
+               <div class="col-md-3 ">
+                <div class="shadow bg-light mb-5 rounded-5 animatedown">
+                   <div class="d-flex flex-column ">
+                    <div class="d-flex flex-row">
+                        <h2 class="badge text-dark mt-5 mb-4 rounded-pill" style="width:70px; height:50px;background-color: lavenderblush;"><span class="h3">01</span></h2>
+                         <h3 class="text-center text-dark mb-4 mt-5">Expert Teacher</h3>
+                    </div>
+                    <h6 class="text-dark mb-5 text-center">Lorem ipsum dolor sit amet, consectetur notted adipisicing elit ut labore.</h6>
+                   </div> 
+                   </div>   
+            </div>
+
+               <div class="col-md-3 ">
+                  <div class="shadow bg-light mb-5 rounded-5 animatedown">
+                   <div class="d-flex flex-column">
+                    <div class="d-flex flex-row">
+                        <h2 class="badge text-dark mt-5 mb-4 rounded-pill" style="width:70px; height:50px;background-color: lavenderblush;"><span class="h3">01</span></h2>
+                         <h3 class="text-center text-dark mb-4 mt-5">Expert Teacher</h3>
+                    </div>
+                    <h6 class="text-dark mb-5 text-center">Lorem ipsum dolor sit amet, consectetur notted adipisicing elit ut labore.</h6>
+                   </div> 
+                   </div>   
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+
+
+
+    <section style="background-image: url('https://t3.ftcdn.net/jpg/02/62/71/08/360_F_262710803_CAKuDCLCdRsNLRhyI6hollZZmQrziJrk.jpg');">
+        <div class="container" style="margin-top:150px;">
+            <div class="row">
+                <div class="col-md-6 " style="margin-top:50px; margin-bottom:50px;">
+                    <div class="animatesideA">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/about1.png" width="600px" height="600px" >
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 animatesideB"  style="margin-top:50px; margin-bottom:50px;">
+                        <h2 class="text-dark fw-bold" style="line-height: 1.6;">We Are Providing The Online Course In Global World</h2>
+                        <p class="text-dark">We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+                        <p class="text-dark">We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+                       <div class="d-flex flex-row mt-5">
+                        <i class="bi bi-check me-4" style="font-size:1.5rem;"></i>
+                        <p class="text-dark fw-bold h6">Get access to 12,000+ of our top courses</p>
+                       </div>
+
+                         <div class="d-flex flex-row">
+                        <i class="bi bi-check me-4" style="font-size:1.5rem;"></i>
+                        <p class="text-dark fw-bold h6">Get access to 12,000+ of our top courses</p>
+                       </div>
+
+                         <div class="d-flex flex-row">
+                        <i class="bi bi-check me-4" style="font-size:1.5rem;"></i>
+                        <p class="text-dark fw-bold h6">Get access to 12,000+ of our top courses</p>
+                       </div>
+
+                       <div style="margin-top:30px;">
+                        <button class="btn btn-primary py-3 px-4">View All Course</button>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+     <section style="margin-top:200px;background-image: url('https://static.vecteezy.com/system/resources/thumbnails/008/058/793/small/abstract-blur-with-bokeh-light-for-background-usage-vector.jpg') ;"> 
+        <div class="d-flex flex-column" style="width:700px;margin-left:400px;">
+            <h2 class="text-dark text-center animatetop" style="margin-top:50px;">Find out by popular Categories</h2>
+            <p class="text-dark text-center animatetop" style="margin-bottom:100px;">We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+        </div>
+
+        <div class="container animatedown">
+            <div class="row">
+                <div class="col-md-2">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+
+                 <div class="col-md-2">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2 ">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2 mt-4">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2 mt-4">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2 mt-4">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2 mt-4">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2 mt-4">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1">Digital Marketing</p>
+                      </div>
+                 </button>
+                </div>
+
+                 <div class="col-md-2 mt-4">
+                    <button class="border border-0 rounded-pill btnhover">
+                    <div class="d-flex flex-row">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/e1.png" width="50px" height="50px" class="rounded-pill" style="border:2px solid gray;">
+                        <p class="text-dark text-center mt-3 ms-1 " style="margin-bottom:100px;">Digital Marketing</p>
+                      </div>
+
+                 </button>
+                </div>
+
+            </div>
+        </div>
+
+</section>
+
+
+
+        <section>
+            <div class="container animatetop">
+            <div class="row">
+                <div class="col-md-8">
+                   <div class="d-flex flex-row">
+                   <h2 class="text-dark fw-bold display-5 mt-5">Join with more than <span class="text-primary">80,000+</span> Courses & Learning creators.</h2>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                    <button class="btn btn-primary" style="margin-left:200px;margin-top:100px;">View All Course</button>
+                </div>
+                </div>
+            </div>
+ 
+
+            <div class="container animatedown">
+                <div class="row">
+                    <div class="col-md-4 mt-5 cardshadow">
+                        <div class="card">
+                            <div class="card-title">
+                                <div class="position-relative imphov">
+                                <img src="https://themewagon.github.io/eduleb/assets/img/course/1.png" width="100%" height="100%">
+                                <h2 class="badge textover text-dark">Education</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column ">
+                                   <h5 class="text-center fw-bold"> <a href="#" style="text-decoration:none;" class=" text-dark cardhover">Complete user fundametals beginner to advance</a></h5>
+                                  <div class="d-flex flex-row justify-content-center mt-4">
+                                    <h6 class="text-secondary fw-bold me-4">12hr study</h6>
+                                    <h6 class="text-secondary fw-bold">2hr 22min</h6>
+                                  </div>
+                                </div>
+                            </div>
+                           <div class="card-footer">
+                            <h4 class="text-info text-center">Course Fee-99$</h4>
+                           </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+
+
+                           <div class="col-md-4 mt-5 cardshadow">
+                        <div class="card">
+                            <div class="card-title">
+                                <div class="position-relative imphov">
+                                <img src="https://themewagon.github.io/eduleb/assets/img/course/2.png" width="100%" height="100%">
+                                <h2 class="badge textover text-dark">UI/UX Design</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column ">
+                                   <h5 class="text-center fw-bold"> <a href="#" style="text-decoration:none;" class=" text-dark cardhover">Complete user fundametals beginner to advance</a></h5>
+                                  <div class="d-flex flex-row justify-content-center mt-4">
+                                    <h6 class="text-secondary fw-bold me-4">12hr study</h6>
+                                    <h6 class="text-secondary fw-bold">2hr 22min</h6>
+                                  </div>
+                                </div>
+                            </div>
+                           <div class="card-footer">
+                            <h4 class="text-info text-center">Course Fee-99$</h4>
+                           </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+
+
+                           <div class="col-md-4 mt-5 cardshadow">
+                        <div class="card">
+                            <div class="card-title">
+                                <div class="position-relative imphov">
+                                <img src="https://themewagon.github.io/eduleb/assets/img/course/3.png" width="100%" height="100%">
+                                <h2 class="badge textover text-dark">Lifestyle</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column ">
+                                   <h5 class="text-center fw-bold"> <a href="#" style="text-decoration:none;" class=" text-dark cardhover">Complete user fundametals beginner to advance</a></h5>
+                                  <div class="d-flex flex-row justify-content-center mt-4">
+                                    <h6 class="text-secondary fw-bold me-4">12hr study</h6>
+                                    <h6 class="text-secondary fw-bold">2hr 22min</h6>
+                                  </div>
+                                </div>
+                            </div>
+                           <div class="card-footer">
+                            <h4 class="text-info text-center">Course Fee-99$</h4>
+                           </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+
+                           <div class="col-md-4 mt-5 mb-5 cardshadow">
+                        <div class="card">
+                            <div class="card-title">
+                                <div class="position-relative imphov">
+                                <img src="https://themewagon.github.io/eduleb/assets/img/course/4.png" width="100%" height="100%">
+                                <h2 class="badge textover text-dark">Science</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column ">
+                                   <h5 class="text-center fw-bold"> <a href="#" style="text-decoration:none;" class=" text-dark cardhover">Complete user fundametals beginner to advance</a></h5>
+                                  <div class="d-flex flex-row justify-content-center mt-4">
+                                    <h6 class="text-secondary fw-bold me-4">12hr study</h6>
+                                    <h6 class="text-secondary fw-bold">2hr 22min</h6>
+                                  </div>
+                                </div>
+                            </div>
+                           <div class="card-footer">
+                            <h4 class="text-info text-center">Course Fee-99$</h4>
+                           </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+
+                           <div class="col-md-4 mt-5 mb-5 cardshadow">
+                        <div class="card">
+                            <div class="card-title">
+                                <div class="position-relative imphov">
+                                <img src="https://themewagon.github.io/eduleb/assets/img/course/5.png" width="100%" height="100%">
+                                <h2 class="badge textover text-dark">Modern</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column ">
+                                   <h5 class="text-center fw-bold"> <a href="#" style="text-decoration:none;" class=" text-dark cardhover">Complete user fundametals beginner to advance</a></h5>
+                                  <div class="d-flex flex-row justify-content-center mt-4">
+                                    <h6 class="text-secondary fw-bold me-4">12hr study</h6>
+                                    <h6 class="text-secondary fw-bold">2hr 22min</h6>
+                                  </div>
+                                </div>
+                            </div>
+                           <div class="card-footer">
+                            <h4 class="text-info text-center">Course Fee-99$</h4>
+                           </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+                           <div class="col-md-4 mt-5 mb-5 cardshadow">
+                        <div class="card">
+                            <div class="card-title">
+                                <div class="position-relative imphov">
+                                <img src="https://themewagon.github.io/eduleb/assets/img/course/6.png" width="100%" height="100%">
+                                <h2 class="badge textover text-dark">Marketing</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-column ">
+                                   <h5 class="text-center fw-bold"> <a href="#" style="text-decoration:none;" class=" text-dark cardhover">Complete user fundametals beginner to advance</a></h5>
+                                  <div class="d-flex flex-row justify-content-center mt-4">
+                                    <h6 class="text-secondary fw-bold me-4">12hr study</h6>
+                                    <h6 class="text-secondary fw-bold">2hr 22min</h6>
+                                  </div>
+                                </div>
+                            </div>
+                           <div class="card-footer">
+                            <h4 class="text-info text-center">Course Fee-99$</h4>
+                           </div>
+
+                        </div>
+                    </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4 class="text-dark">Helping <span class="text-primary">86,000+</span>  global companies take the gloves off</h4>
+            </div>
+
+
+              <div class="col-md-8">
+               
+
+             <div class="carousel slide" id="corouslide" data-bs-ride="carousel" data-bs-interval="2000">
+               <div class="carousel-inner">
+             
+
+              <div class="carousel-item active">
+               <div class="col-md-3">
+                <img src="https://themewagon.github.io/eduleb/assets/img/clients/5.png">
+               </div>
+               </div>
+
+                <div class="carousel-item">
+                <div class="col-md-3">
+                <img src="https://themewagon.github.io/eduleb/assets/img/clients/2.png">
+               </div>
+               </div>
+
+                 <div class="carousel-item">
+                <div class="col-md-3">
+                <img src="https://themewagon.github.io/eduleb/assets/img/clients/1.png">
+               </div>
+               </div>
+
+                 <div class="carousel-item">
+                <div class="col-md-3">
+                <img src="https://themewagon.github.io/eduleb/assets/img/clients/3.png">
+               </div>
+               </div>
+
+</div> 
+</div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="margin-top:150px;margin-bottom: 100px;">
+    <iframe src="https://www.youtube.com/embed/YjPoFyoBr_g" width="1300px" height="500px" style="border:10px solid gray;"></iframe>
+</div>
+
+
+<section style="background-image: url('https://wallpapers.com/images/hd/plain-light-blue-background-3440-x-1440-7p3e4jfprbc57mb7.jpg');">
+    <div class="container ">
+        <div class="row">
+            
+                   <div class="col-md-6 animatesideA mt-5">
+                        <h2 class="text-dark fw-bold" style="line-height: 1.6;">We Are Providing The Online Course In Global World</h2>
+                        <p class="text-dark">We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+                        <p class="text-dark">We offer a brand new approach to the most basic learning paradigms. Choose from a wide range of learning options and gain new skills! Our school is know.</p>
+                       <div class="d-flex flex-row mt-5">
+                        <i class="bi bi-check me-4" style="font-size:1.5rem;"></i>
+                        <p class="text-dark fw-bold h6">Get access to 12,000+ of our top courses</p>
+                       </div>
+
+                         <div class="d-flex flex-row">
+                        <i class="bi bi-check me-4" style="font-size:1.5rem;"></i>
+                        <p class="text-dark fw-bold h6">Get access to 12,000+ of our top courses</p>
+                       </div>
+
+                         <div class="d-flex flex-row">
+                        <i class="bi bi-check me-4" style="font-size:1.5rem;"></i>
+                        <p class="text-dark fw-bold h6">Get access to 12,000+ of our top courses</p>
+                       </div>
+
+                       <div style="margin-top:30px;">
+                        <button class="btn btn-primary py-3 px-4">View All Course</button>
+                       </div>
+                    </div>
+
+                    <div class="col-md-6 animatesideB mt-5 mb-5">
+                        <div class="position-relative">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/about3.png" style="margin-left:100px;" class="rounded-3">
+                        <div class=" container d-flex flex-column bighov bg-light rounded-3" style="max-width:250px;">
+                            <h4 class="text-dark">3300+</h4>
+                            <h5 class="text-primary">Online Courses</h5>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section style="background-image: url('https://t3.ftcdn.net/jpg/02/90/46/84/360_F_290468474_6yJ9eBPW2wevarR9cbXN87TCFJDVVuAR.jpg');">
+    <div class="container" style="margin-top:150px;">
+        <div class="row">
+            <div class="col-md-6 mb-5 animatesideA" style="margin-top: 80px;">
+                <div class="d-flex flex-column">
+                    <h2 class="text-dark mb-4">What Student's Say To Do Their Online Course</h2>
+                    <img src="https://themewagon.github.io/eduleb/assets/img/review.png">
+                </div>
+            </div>
+
+
+            <div class="col-md-6 animatesideB" style="margin-top: 80px;">
+             <div class="card">
+                <div class="card-body">
+                    <div class="d-flex flex-column">
+                        <img src="https://themewagon.github.io/eduleb/assets/img/quote.png" width="50px" height="50px">
+                        <h4 class="text-secondary mt-5">Dream big and take small steps to get there. The best way to learn is to start.You can't control the wind, but you can adjust your sails. Good habits today build a great tomorrow.</h4>
+                    </div>
+                    <div class="container d-flex justify-content-start mb-5 mt-4" style="background-color: lavenderblush;">
+                        <div class="d-flex flex-row">
+                            <img src="https://themewagon.github.io/eduleb/assets/img/testimonial/4.png" class="rounded-pill me-5">
+                            <div class="d-flex flex-column">
+                                <h3 class="text-dark">RIXIE</h3>
+                                <h5 class="text-secondary">March 9th</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer style="background-color: lavenderblush;margin:0;">
+    <p class="text-dark text-center mb-0 py-5">© 2024. All Rights Reserved by Bestwpware • Distributed by ThemeWagon</p>
+</footer>
+    
+</body>
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    let items = document.querySelectorAll('#corouslide .carousel-item');
+
+    items.forEach((el) => {
+        const minPerSlide = 4;
+        let next = el.nextElementSibling;
+        for (var i = 1; i < minPerSlide; i++) {
+            if (!next) {
+              
+                next = items[0];
+            }
+            let cloneChild = next.cloneNode(true);
+            el.appendChild(cloneChild.children[0]);
+            next = next.nextElementSibling;
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 250; 
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / speed;
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCount();
+    });
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>

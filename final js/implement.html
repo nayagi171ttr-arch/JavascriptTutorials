@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+ <style>
+    .container{
+        width:600px;
+    }
+    .tags{
+        margin-top:60px;
+    }
+ </style>
+    </head>
+<body>
+    <h2 class="text-center tags">Login Form</h2>
+    <div class="container">
+    <form>
+        <input type="text" id="name" class="form-control">
+        <span id="nam"></span>
+        <input type="password" id="pass" class="form-control">
+        <span id="pas"></span>
+        <input type="text" id="email" class="form-control">
+        <span id="emi"></span>
+        <input type="number" id="number" class="form-control">
+        <span id="num"></span>
+        <div class="d-flex justify-content-center mt-5">
+        <button class="btn btn-primary" onclick="login()" id="buttons" type="button">Login</button>
+        </div>
+    </form>
+    </div>
+</body>
+<script>
+    const name=document.getElementById('name');
+    const nam=document.getElementById('nam');
+    const pass=document.getElementById('pass');
+    const pas=document.getElementById('pas');
+    const email=document.getElementById('email');
+    const emi=document.getElementById('emi');
+    const number=document.getElementById('number');
+    const num=document.getElementById('num');
+    const buttons=document.getElementById('buttons');
+     
+
+
+    name.addEventListener('input',function(){
+        nam.innerText=name.value;
+      
+    })
+
+    pass.addEventListener('input',function(){
+        pas.innerText=pass.value;
+    })
+
+    email.addEventListener('input',function(){
+        emi.innerText=email.value;
+    })
+
+    number.addEventListener('input',function(){
+        num.innerText=number.value;
+    })
+
+buttons.addEventListener('click',function(e){
+    e.preventDefault();
+    const hasupper=/[A-Z]/.test(pass.value);
+    const haslower=/[a-z]/.test(pass.value);
+     const hasdigit=/\d/.test(pass.value);
+      const hasspecial=/['!@#$%^&*()_+']/.test(pass.value);
+    
+
+    if(name.value===""){
+        alert('enter user name');
+    }
+    else if(!hasupper ||!haslower ||!hasdigit || !hasspecial ){
+        alert('enter valid password');
+    }
+    else if(!email.value.includes('@') ||  !email.value.includes('.')){
+        alert('enter valid email');
+       
+    }
+    else{
+        alert('login successful');
+        localStorage.setItem('name',name.value);
+        localStorage.setItem('password',pass.value);
+        confirm('Login successful');
+    }
+})
+
+
+</script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>

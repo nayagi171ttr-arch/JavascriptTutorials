@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        h2 {
+            color: #1c1e21;
+        }
+
+        #cityInput {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        #searchBtn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #searchBtn:hover {
+            background-color: #0056b3;
+        }
+
+        hr {
+            width: 400px;
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        #weather-info {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        #city-name {
+            margin-top: 0;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h2>Weather Search</h2>
+    <input type="text" id="cityInput" placeholder="Enter city name...">
+    <button id="searchBtn">Get Weather</button>
+    <hr>
+    <div id="weather-info">
+        <h3 id="city-name">Search for a city to see weather</h3>
+        <p id="temp"></p>
+        <p id="humidity"></p>
+        <p id="desc"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

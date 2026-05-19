@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+h2 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.container, .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    width: 380px;
+    margin: 15px;
+}
+
+
+input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+
+#gen {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #00d2ff;
+    background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);
+    background: linear-gradient(to right, #3a7bd5, #00d2ff);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+#gen:hover {
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+}
+
+
+.displ {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+#total, #totals {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+#grdtot {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#result {
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+    font-size: 1.3rem;
+}
+        
+    </style>
+</head>
+<body>
+    <h2>Smart Shopping Assistant</h2>
+    <div class="container">
+        <h1 id="total"></h1>
+        <input type="number" id="totalamt" placeholder="enter total amount">
+        <input type="text" id="item" placeholder="enter item name">
+        <input type="number" id="quantity" placeholder="enter quantity">
+        <input type="number" id="amt" placeholder="price">
+        <div>
+            <button id="gen" onclick="generate()">Purchase</button>
+        </div>
+ </div>
+ <div class="card">
+    <div class="displ">
+    <h2 id="items"></h2>
+    <h2 id="qnt"></h2>
+    </div>
+    <h2 id="totals"></h2>
+    <h2 id="grdtot"></h2>
+    <h2 id="result"></h2>
+
+ </div>
+</body>
+
+<script>
+    const totalamt=document.querySelector('#totalamt');
+    const printamt=document.querySelector('#total');
+    totalamt.addEventListener('input',function(){
+        printamt.innerHTML='Total amount:'+totalamt.value;
+    })
+
+    const item=document.querySelector('#item');
+    const quantity=document.querySelector('#quantity');
+    const btn=document.querySelector('#gen');
+    const items=document.querySelector('#items');
+    const qnt=document.querySelector('#qnt');
+    const printamts=document.querySelector('#totals'); 
+
+    let additem=btn.addEventListener('click',function(){
+        printamts.innerHTML='Total amount:'+totalamt.value;
+        items.innerHTML=item.value ;
+        qnt.innerHTML='-'+quantity.value;
+    })
+ let cart=[];
+ 
+function generate(){
+   
+    const amt=document.querySelector('#amt').value;
+     const quantity=document.querySelector('#quantity').value;
+     const total=amt*quantity;
+     const grdtot=document.querySelector('#grdtot');
+      const totalamt=document.querySelector('#totalamt');
+    
+     cart.push(total);
+     let count=0;
+     let budget=Number(grdtot.value);
+     cart.forEach(val=>{
+        count+=val;
+       return count;
+     })
+     grdtot.innerHTML='GrandTotal:'+count;
+
+     if(count > totalamt.value ){
+        result.innerHTML="Low budget";
+        result.style.color='red';
+
+     }
+     else{
+        result.innerHTML="crt budget";
+        result.style.color='black';
+     }
+
+}
+</script>
+</html>

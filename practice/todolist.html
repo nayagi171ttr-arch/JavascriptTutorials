@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>ToDoList</h2>
+    <input id="task" type="text">
+    <button id="click">Add Task</button>
+    <ul id="adds"></ul>
+</body>
+<script>
+let click=document.getElementById('click');
+
+click.addEventListener('click',function(){
+    let val=document.getElementById('task');
+    let task=val.value;
+    if(task==''){
+        alert('enter a value');
+    }
+    else{
+            let li=document.createElement('li');
+    li.innerText=task;
+    let deletebtn=document.createElement('button');
+    deletebtn.innerText='delete';
+    deletebtn.addEventListener('click',function(){
+        li.remove();
+    })
+    li.appendChild(deletebtn);
+    adds.appendChild(li);
+    val.value="";
+    }
+
+})
+</script>
+</html>

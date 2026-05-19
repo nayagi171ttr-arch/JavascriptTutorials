@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .container{
+            background-color:lavenderblush;
+            display:flex;
+            flex-direction: column;
+            width:800px;
+            align-items: center;
+            margin-left: 400px;
+        }
+        .hr{
+            width:50%;
+            color:blue;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body id="colors">
+    
+<div class="container">
+
+<!--Bulb content to switch on and off lights using buttons-->
+
+<h2 class="mt-5">What Can JavaScript Do?</h2>
+<p>JavaScript can change HTML attribute values.</p>
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+<button onclick="document.getElementById('myImage').src='https://png.pngtree.com/png-vector/20241017/ourmid/pngtree-glowing-light-bulb-clipart-perfect-for-innovation-and-energy-designs-png-image_14107782.png'">Turn on the light</button>
+<img id="myImage" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Gluehlampe_01_KMJ.png" style="width:100px">
+<button onclick="document.getElementById('myImage').src='https://cdn.jiostore.online/v2/jmd-asp/jdprod/wrkr/products/pictures/item/free/original/upe_WIDbU-LED-BULB-23W-GLOW-DOT-105LM/W-B22-6500K-494226795.png'">Turn off the light</button>
+<br><hr class="hr">
+
+
+<!--CSS Style Contents using buttons-->
+<h1 class="h3 mt-4 mb-4">CSS Implementation in js</h1>
+<h2 class="h5 text-primary mt-3 mb-3" id="Change">Change the contents</h2>
+<p id="para">SO here i am just going to make paragraph text larger and change its color when i click button</p>
+<div class="d-flex flex-row">
+<button class="me-3" type="button" onclick="document.getElementById('para').style.fontSize='20px'">Tobig</button>
+<button class="me-3" type="button" onclick="document.getElementById('para').style.fontSize='10px'">Tosmall</button>
+<button class="me-3" type="button" onclick="document.getElementById('para').style.display='none'">Hide</button>
+<button class="me-3" type="button" onclick="document.getElementById('para').style.display='block'">Show</button>
+</div><br><hr class="hr">
+
+<!--Change text-->
+<h3 class="h3 mt-4 mb-5 text-primary">Change Text</h3>
+<h4 class="h6 mb-4" id="changetext" style="text-align: center;">The power of positive thinking is remarkable. When you think of something that brings you joy, your brain releases endorphins. Those endorphins fill you with the feeling of well-being.
+Positive thinking helps you frame your mindset and change your life.</h4>
+<button class="mb-4" type="button" onclick="document.getElementById('changetext').innerHTML='People tell you the world looks a certain way. Parents tell you how to think. Schools tell you how to think. TV. Religion. And then at a certain point, if you’re lucky, you realize you can make up your own mind. Nobody sets the rules but you. You can design your own life.”— Carrie Ann Moss'">Change</button>
+<br><hr class="hr">
+
+<!--Change Style-->
+<h3 class="h3 text-primary"> Change Style</h3>
+<h4 class="h6 mb-4 mt-4" id="changestyle">Failure will never overtake me if my determination to succeed is strong enough.</h4>
+<button class="mb-4" type="button" onclick="document.getElementById('changestyle').style.color='red';document.getElementById('changestyle').style.fontSize='20px'">Change style</button>
+<br><hr class="hr">
+
+<!--Or we can modify this through script tag also,below is the example of that-->
+<h3 class="h3 text-primary">Change style using js</h3>
+<h4  class="h6 mb-4 mt-4" id="jscode" style="text-align: center;">“Life isn’t about finding yourself. Life is about creating yourself.”― George Bernard Shaw</h4>
+<button class="mb-4" id="jsbutton" onclick="jsbutton()">usejs</button>
+<br><hr class="hr">
+
+<!--Password length checker-->
+<h3 class="h3 text-primary">Password length checker</h3>
+<h4 class="h3 text-primary">Login form</h4> 
+<input id="passwordss" type="password" placeholder="please enter you password"><br>
+<button id="password" type="button" onclick="passwordchecker()">Password Checker</button><br>
+<h4 id="error"></h4><br>
+<br><hr class="hr">
+
+<!--Form Validation-->
+<h2 class="h3 text-primary mb-4">Validate form</h4>
+<input type="text" id="email" placeholder="enter email"></h4><br>
+<span id="check"></span><br>
+<input type="password" id="pass" placeholder="enter password"></h4><br>
+<span id="checked"></span><br>
+<button id="passed" onclick="pass()">Validate</button><br>
+<h4 id="result"></h4><br>
+<br><hr class="hr">
+
+<button class="mt-5 mb-5" type="button" onclick="togglemode()">Toggle button</button>
+</div>
+
+
+
+
+</body>
+<script>
+    function jsbutton(){
+        document.getElementById('jscode').style.color='red';
+        document.getElementById('jscode').style.fontSize='30px';
+    }
+
+    function passwordchecker(){
+        let password=(document.getElementById('passwordss').value);
+        let error=document.getElementById('error');
+        if(password==="" || password.length<6){
+           error.textContent="Enter valid password";
+        }
+        else{
+            error.textContent="Login Successful";
+        }
+    }
+
+    function pass(){
+        let email=document.getElementById('email').value;
+        let password=document.getElementById('pass').value;
+        let check=document.getElementById('check');
+        let checked=document.getElementById('checked');
+        let result=document.getElementById('result');
+        let isvalid=true;
+
+        if(!email.includes('@') ){
+          check.textContent="@ is must";
+          check.style.color='red';
+          isvalid=false;
+    }
+    if(password.length<6){
+        checked.textContent="Min length should be 6";
+         checked.style.color='red';
+        isvalid=false;
+    }
+    
+    if(isvalid){
+        result.textContent="login successful";
+        result.style.color='green';
+    }
+}
+
+function togglemode(){
+    let colors=document.getElementById('colors');
+    if(colors.style.background==='black'){
+        colors.style.background="white";
+        colors.style.color="black";
+    }
+    else{
+        colors.style.background="black";
+        colors.style.color="red";
+    }
+}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.main-container {
+    display: flex;
+    gap: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #2a5298;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#btn {
+     background-color: #2a5298;
+     color: white; 
+    }
+#btn:hover { 
+    background-color: #1e3c72; 
+    transform: translateY(-2px); 
+}
+
+#resbtn { 
+    background-color: #e74c3c; 
+    color: white; 
+}
+#resbtn:hover { 
+    background-color: #c0392b; 
+    transform: translateY(-2px); 
+}
+
+
+.card {
+    width: 250px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.card-header {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+#upd {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-transform: uppercase;
+}
+
+.score-circle {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #eee;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#upnum {
+    font-size: 3rem;
+    margin: 0;
+    transition: color 0.4s ease; 
+}
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="input-section">
+            <input type="text" id="input" placeholder="Player Name">
+            <input type="number" id="num" placeholder="Score">
+            <div class="button-group">
+                <button type="button" id="btn">Update Score</button>
+                <button type="button" id="resbtn">Reset Card</button>
+            </div>
+        </div>
+
+      
+        <div class="card" id="player-card">
+            <div class="card-header">PLAYER STATS</div>
+            <h3 id="upd">Enter Name Above</h3>
+            <div class="score-circle">
+                <h2 id="upnum">0</h2>
+            </div>
+            <p>Current Points</p>
+        </div>
+    </div>
+</body>
+<script>
+      
+        let inp=document.querySelector('#input');
+        let spa=document.querySelector('#upd');
+        let num=document.querySelector('#num');
+        let upnum=document.querySelector('#upnum');
+        let btn=document.querySelector('#btn');
+        inp.addEventListener('input',function(){
+            spa.innerHTML=inp.value;
+        })
+        btn.addEventListener('click',function(){
+              num.value++;
+            let curr=Number(num.value);
+            upnum.textContent=curr;
+             if(curr<10){
+            upnum.style.color="red";
+        }
+        else if(curr>=10){
+            upnum.style.color="green";
+        }
+        else{
+            upnum.style.color="black";
+        }
+      
+        })
+
+      const rebtn=document.querySelector('#resbtn');
+      rebtn.addEventListener('click',function(){
+            inp.value="";
+            spa.textContent="";
+            num.value="";
+            upnum.textContent="0";
+      })
+
+
+</script>
+</html>

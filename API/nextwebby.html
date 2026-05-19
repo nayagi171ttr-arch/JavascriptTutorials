@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <section>
+        <div class="container rounded-2 overflow-hidden shadow mt-5 mb-5" style="max-width:700px">
+        <div class="row">
+            <div class="col-md-4 bg-primary">
+                <div class="d-flex flex-column mt-5">
+                    <div class="d-flex justify-content-center">
+                <img src="" width="150px" height="150px" id="imgurl" class="mt-5 rounded-pill border border-1" style="border-color: black !important;margin-top:200px !important;">
+                </div>
+                <h4 class="text-light fw-bold text-center " id="empid" style="margin-top:60px;"></h4>
+                <h4 class="text-light fw-bold text-center" id="joindate"></h4>
+                <h4 class="text-light fw-bold text-center" id="blood"></h4> 
+                <h4 class="text-light fw-bold text-center" id="contact"></h4>  
+                </div>             
+            </div>
+
+            <div class="col-md-8 bg-light">
+                 <div class="d-flex flex-column mt-5">
+                    <div class="d-flex flex-row">
+                        <img src="https://yt3.googleusercontent.com/DQcgYkzyGfyZCDkyRDzSu4JWNfTxON0s9JqrxkFsj1PbhzDQgUZeKLGc6_JZEuPpPrvic7bFS2I=s900-c-k-c0x00ffffff-no-rj" width="80px" height="80px" class="mt-4 me-4 rounded-pill ">
+                        <div class="d-flex flex-column">
+                            <h1 class="text-primary">NEXTWEBBY</h1>
+                            <h5 class="text-primary">--MIND POWER LLP--</h5>
+                            <h6 class="text-primary">CREATIVE THOUGHTS LEARNING TECH</h6>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center mt-5 mb-5">
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                    <button class="btn border-0" onclick="document.getElementById('fileInput').click();">
+                    <img src="https://t3.ftcdn.net/jpg/00/54/04/30/360_F_54043068_Jv1e6QuYbH7R4aX1rTJllIn5TrJU4PLD.jpg" width="200px" id="profile" height="200px" class="rounded-pill border border-4" style="border-color: orange !important;">
+                    </button>
+                    </div>
+                    <form class="floating">
+                        <div class="d-flex flex-row">
+                        <label class="form-control border-0">EMPLOYEE ID:</label>
+                        <input type="text" class="form-control border-0 text-dark" id="emp">
+                        </div>
+ 
+                         <div class="d-flex flex-row">
+                        <label class="form-control border-0">DATE OF JOIN:</label>
+                        <input type="text" class="form-control text-dark border-0" id="dateofjoin">
+                        </div>
+
+                         <div class="d-flex flex-row">
+                        <label class="form-control border-0">BLOOD GROUP:</label>
+                        <input type="text" class="form-control text-dark border-0" id="bloodgrp">
+                        </div>
+
+                         <div class="d-flex flex-row mb-5">
+                        <label class="form-control border-0">CONTACT NO:</label>
+                        <input type="text" class="form-control text-dark border-0" id="con">
+                        </div>
+
+                    </form>
+
+                    <div class="d-flex flex-row justify-content-between mb-5 mt-5">
+                        <h6 class="text-dark">Authorization</h6>
+                        <h6 class="text-dark">Signature</h6>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    //employee name
+    const emp=document.querySelector('#emp');
+    const empid=document.querySelector('#empid');
+    emp.addEventListener('input',function(){
+              empid.innerHTML=emp.value;
+    })
+   //dateof joining
+    const dateofjoin=document.querySelector('#dateofjoin');
+    const joindate=document.querySelector('#joindate');
+    dateofjoin.addEventListener('input',function(){
+        joindate.innerHTML=dateofjoin.value;
+    })
+
+   //bloodgroup
+   const bloodgrp=document.querySelector('#bloodgrp');
+     const blood=document.querySelector('#blood');
+    bloodgrp.addEventListener('input',function(){
+        blood.innerHTML=bloodgrp.value;
+    })
+
+    //Contact form
+     const con=document.querySelector('#con');
+     const contact=document.querySelector('#contact');
+    con.addEventListener('input',function(){
+        contact.innerHTML=con.value;
+    })
+
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0]; 
+    if (file) {
+       const tempUrl = URL.createObjectURL(file);  
+        const profileImg = document.getElementById('profile');
+        const imgurl=document.getElementById('imgurl');
+        profileImg.src = tempUrl;
+        imgurl.src=tempUrl;
+        profileImg.onload = function() {
+            URL.revokeObjectURL(tempUrl);
+        };
+    }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>

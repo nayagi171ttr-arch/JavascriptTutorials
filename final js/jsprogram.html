@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <!--To do List-->
+    <h2 class="h2">To do list</h2>
+    <input type="text" id="getin">
+    <button class="btn btn-primary" id="btns" onclick="getfunc()">Add</button>
+    <ul id="hai"></ul>
+
+    <!--calculator-->
+    <h2 class="h2">Calculator</h2>
+    <div class="buttons">
+        <input type="text" id="inn">
+        <button onclick="addapp('0')">0</button>
+        <button onclick="addapp('1')">1</button>
+        <button onclick="addapp('2')">2</button>
+        <button onclick="addapp('3')">3</button>
+        <button onclick="addapp('4')">4</button>
+        <button onclick="addapp('5')">5</button>
+        <button onclick="addapp('6')">6</button>
+        <button onclick="addapp('7')">7</button>
+        <button onclick="addapp('8')">8</button>
+        <button onclick="addapp('9')">9</button>
+        <button onclick="addapp('+')">+</button>
+        <button onclick="addapp('-')">-</button>
+        <button onclick="addapp('*')">*</button>
+        <button onclick="addapp('/')">/</button>
+        <button onclick="clearfun()">clear</button>
+        <button onclick="deletem()">delete</button>
+         <button onclick="cal()">=</button>
+    </div>
+
+    <!--Form validation-->
+    <form class="form-floating">
+        <input type="text" id="name" placeholder="enter name"><br>
+        <span id="nam"></span><br>
+        <h6 id="namval"></h6><br><br>
+        <input type="text" id="pass" placeholder="enter password"><br>
+        <span id="pas"></span><br>
+        <h6 id="passval"></h6><br>
+        <button id="clickk" onclick="clickk()">Login</button>
+        
+        
+
+    </form>
+</body>
+<script>
+    function getfunc(){
+        const getin=document.getElementById('getin');
+        const get=getin.value.trim();
+            const hai=document.getElementById('hai');
+        if(get===""){
+            alert("enter text");
+        }
+        else{
+            let li=document.createElement('li');
+            li.innerText=get;
+
+            let deletebtn=document.createElement('button');
+            deletebtn.innerText="delete";
+            deletebtn.addEventListener('click',function(){
+                li.remove();
+            })
+        
+             li.appendChild(deletebtn);
+            hai.appendChild(li);
+            getin.value="";
+           
+
+        }
+    }
+  const inn=document.getElementById('inn');
+    function addapp(input){
+     inn.value+=input;
+      }
+      function clearfun(){
+        inn.value="";
+      }
+    function deletem(){
+        inn.value=inn.value.slice(0,-1);
+    }
+  function cal(){
+    inn.value=eval(inn.value);
+  }
+
+
+  //floating
+  const name=document.getElementById('name');
+ 
+  const pass=document.getElementById('pass');
+ 
+  const nam=document.getElementById('nam');
+  const pas=document.getElementById('pas');
+
+  name.addEventListener('input',function(){
+        nam.innerText=name.value;
+        
+  })
+  pass.addEventListener('input',function(){
+    pas.innerText=pass.value;
+  })
+
+const clickk=document.getElementById('clickk');
+clickk.addEventListener('click',function(e){
+    e.preventDefault();
+    const namval=document.getElementById('namval');
+    const passval=document.getElementById('passval');
+    const hasupper=/[A-Z]/.test(pass.value);
+    const haslower=/[a-z]/.test(pass.value);
+    const hasdigit=/\d/.test(pass.value);
+    const hasspecial=/['@#$!%^&*()*$^_+']/.test(pass.value);
+
+    if(!name.value.includes('@') || !name.value.includes('.')){
+           namval.innerText="enter valid text";
+           namval.style.color="red";
+    }
+    else{
+        namval.innerText="valid password";
+        namval.style.color="green";
+    }
+
+    if(!hasupper || !haslower || !hasdigit || !hasspecial){
+        passval.innerText="enter valid password";
+        passval.style.color="red";
+    }
+    else{
+        passval.innerText="valid password";
+        passval.style.color="green";
+    }
+  }
+)
+
+
+ 
+</script>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>

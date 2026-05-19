@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Analyzer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5 p-4 bg-white shadow rounded">
+        <h1 class="text-center mb-4" id="welcome"></h1>
+        <div id="result" class="fs-5"></div>
+    </div>
+    <script>
+        let name = localStorage.getItem('name').trim();
+        const welcome = document.getElementById('welcome');
+        welcome.textContent = "WELCOME " + name;
+        let upper = name.toUpperCase();
+        let lower = name.toLowerCase();
+        let count = name.length;
+        let first = name.charAt(0);
+        let last = name.charAt(name.length - 1);
+        let checkA = lower.includes("a");
+        let hyphen = name.replaceAll(" ", "-");
+        let reverse = name.split("").reverse().join("");
+        let words = name.split(" ");
+        let wordCount = words.length;
+        let palindrome =lower.replaceAll(" ", "") === reverse.toLowerCase().replaceAll(" ", "");
+        let aCount = lower.split("a").length - 1;
+        document.getElementById("result").innerHTML = `
+        <b>Original Name:</b> ${name} <br><br>
+        <b>Uppercase:</b> ${upper} <br><br>
+        <b>Lowercase:</b> ${lower} <br><br>
+        <b>Character Count:</b> ${count} <br><br>
+        <b>First Character:</b> ${first} <br><br>
+        <b>Last Character:</b> ${last} <br><br>
+        <b>Contains 'a':</b> ${checkA} <br><br>
+        <b>With Hyphen:</b> ${hyphen} <br><br>
+        <b>Reversed Name:</b> ${reverse} <br><br>
+      <b>Words Array:</b> ${JSON.stringify(words)}<br><br>
+        <b>Word Count:</b> ${wordCount} <br><br>
+        <b>Palindrome:</b> ${palindrome} <br><br>\
+        <b>Count of 'a':</b> ${aCount}
+        `;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

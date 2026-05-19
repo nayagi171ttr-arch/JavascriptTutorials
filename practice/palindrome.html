@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--palindromechecker-->
+    <h2>Palindrome Checker</h2>
+    <input type="number" id="num">
+    <button id="clickbtn">Click</button>
+    <h2 id="result"></h2>
+
+    <!--PrimeNumber Checker-->
+    <h2>Prime Number Checker</h2>
+    <input type="number" id="prime">
+    <button id="primecheck">PrimeCheck</button>
+    <h2 id="isprime"></h2>
+
+    <!--Factorial Program-->
+    <h2>Factorial</h2>
+    <input type="number" id="fact">
+    <button id="factorial">Find Fact</button>
+    <h2 id="find"></h2>
+
+    <!--Fibanacci series-->
+    <h2>Fibonacci series</h2>
+    <input type="number" id="fib">
+    <button id="fibbo">Fibbo</button>
+    <h2 id="findfib"></h2>
+
+    <!--Armstrong Number-->
+    <h2>Armstrong Number</h2>
+    <input id="getnum" type="number">
+    <button id="arm">Click</button>
+    <h2 id="res"></h2>
+
+    <!--Reverse a string-->
+    <h2>Reverse a string</h2>
+    <input id="gettext" type="text">
+    <button id="rev">reverse</button>
+    <h2 id="printers"></h2>
+
+    <!--Sorting array-->
+    <h2>Sorting array</h2>
+    <input id="getinput" type="number">
+    <button id="clicks">Sort</button>
+    <h2 id="myres"></h2>
+</body>
+<script>
+   //palindrome checker
+    let result=document.getElementById('result');
+    let click=document.getElementById('clickbtn');
+    
+   click.addEventListener('click',function(){
+     let num=document.getElementById('num').value;
+     let rev=num.split('').reverse().join('');
+     result.innerHTML=num===rev ?'palindrome':'not palindrome';
+   })
+
+
+   //primenumber checker
+   let primecheck=document.getElementById('primecheck');
+   let isprime=document.getElementById('isprime');
+
+   primecheck.addEventListener('click',function(){
+    let prime=Number(document.getElementById('prime').value);
+    let isvalid=true;
+    for(i=2;i<prime;i++){
+        if(prime%i===0){
+           isvalid=false;
+            break;
+        }
+    }
+  isprime.textContent=isvalid ? 'PrimeNumber' :'Not a prime Number';
+   })
+
+   //Factorial of a number
+   let factorial=document.getElementById('factorial');
+   let find=document.getElementById('find');
+
+   factorial.addEventListener('click',function(){
+    let fact=Number(document.getElementById('fact').value);
+    let factt=1;
+    for(i=1;i<=fact;i++){
+        factt=factt*i;
+        find.innerHTML=factt;
+    }
+     })
+
+    //Fibonnacci series
+    let fibbo=document.querySelector('#fibbo');
+    let findfib=document.querySelector('#findfib');
+    fibbo.addEventListener('click',function(){
+        let fib=Number(document.querySelector('#fib').value);
+        let a=0;
+        let b=1;
+        findfib.textContent=a;
+        findfib.textContent+=b;
+       
+        for(i=1;i<fib;i++){
+            let next=a+b;
+            findfib.textContent+=next;
+            a=b;
+            b=next;
+        }
+   
+   })
+
+   //armstrongnumber
+   let arm=document.getElementById('arm');
+   let res=document.getElementById('res');
+   arm.addEventListener('click',function(){
+    let count=1;
+    let getnum=Number(document.getElementById('getnum').value);
+    let avg=getnum.toString().split('');
+ for(i =1;i<avg.length;i++){
+    count+=avg[i]*avg[i]*avg[i];
+  
+ }
+   res.textContent=(count===getnum)?'armstrong':'notarmstrong';
+   })
+
+   //reverse a string
+  let rev=document.getElementById('rev');
+  let printers=document.getElementById('printers');
+  rev.addEventListener('click',function(){
+ let gettext=document.getElementById('gettext').value;
+  let ress=gettext.split('').reverse().join('');
+ printers.textContent=ress;
+  })
+ 
+
+  //sorting a array
+ let clicks=document.getElementById('clicks');
+  let myres=document.getElementById('myres'); 
+  clicks.addEventListener('click',function(){
+    let getinput=document.getElementById('getinput').value;
+    let a=getinput.split('');
+    let b=[];
+    for(i=0;i<=a.length;i++){
+        b.push(a[i]);
+    }
+    let c=b.sort();
+    myres.textContent=c;
+  })
+
+    </script>
+</html>

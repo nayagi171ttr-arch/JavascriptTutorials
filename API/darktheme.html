@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    
+</head>
+<body id="bgcolor" style="background-color: white;color:black;">
+    <button id="btn" onclick="change()">toggle</button>
+</body>
+<script>
+   const btn=document.querySelector('#btn');
+   const body=document.querySelector('body');
+   btn.addEventListener('click',function(){
+    if(body.style.backgroundColor==='white'){
+        body.style.backgroundColor='black';
+        body.style.color='white';
+    }
+    else if(body.style.backgroundColor==='black'){
+        body.style.background='white';
+         body.style.color='dark';
+    }
+   
+   })
+</script>
+</html>

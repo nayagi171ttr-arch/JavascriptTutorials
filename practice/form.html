@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: white;color:black" id="body">
+    <!--Form validation using alert popup (This can be done using if else itself) -->
+    <h2>Form Validation using alert popup</h2>
+     Name:<input type="text" id="username"><br><br>
+    password:<input type="password" id="password"><br><br>
+    <button id="btn" onclick="submit()">Login</button>
+
+    <!--Form validation using isvalid-->
+    <h2>Form validation using validity</h2>
+    Name:<input type="text" id="name">
+    <p id="nam"></p><br><br>
+    password:<input type="password" id="pass">
+    <p id="pas"></p><br><br>
+    <button id="btns" onclick="sub()">login</button>
+
+    <!--Form validation using inputvalidation-->
+    <h2>Form validation using inputvalidation</h2>
+    Name:<input type="text" id="namin">
+    <p id="nami"></p>
+    <br><br>
+    label:<input type="password" id="labin"><br><br>
+     <p id="pain"></p>
+     <button id="clbtn">Login</button>
+
+     <!--Form validation using input constraints-->
+     <h2>Form validation using input constraints</h2>
+     Name:<input type="text" id="validname">
+     <p id="valname"></p><br><br>
+     Password:<input type="password" id="validpass">
+     <p id="valpass"></p>
+     <button id="validform">Login</button>
+     <p id="checknam"></p>
+     <p id="checkpass"></p>
+
+     <!--Toggle-->
+  <button id="toggle" onclick="tog()">Toggle</button>      
+   
+</body>
+   <script>
+    //<!--Form validation using alert popup (This can be done using if else itself) -->
+   const username=document.querySelector('#username');
+   const password=document.querySelector('#password');
+    function submit(){
+        if(username.value==''){
+            alert("please enter username");
+        }
+        else if(password.value==''){
+            alert('please enter password');
+        }
+        else{
+            alert('form submitted successfully');
+        }
+    }
+
+//   <!--Form validation using isvalid-->
+    const name=document.querySelector('#name');
+    const nam=document.getElementById('nam');
+    const pass=document.querySelector('#pass');
+    const pas=document.getElementById('pas');
+    function sub(){
+        isvalid=true;
+        if(name.value==''){
+           nam.textContent="enter your name";
+           isvalid=false;
+        }
+        else if(pass.value==''){
+            pas.textContent="enter password";
+            isfalse=false;
+        }
+        else{
+            confirm('Are you sure u want to submit');
+            localStorage.setItem('username',name.value);
+            localStorage.setItem('password',pass.value);
+        }
+    }
+
+//   <!--Form validation using inputvalidation-->
+const namin=document.querySelector('#namin');
+const labin=document.querySelector('#labin');
+const nami=document.querySelector('#nami');
+const pain=document.querySelector('#pain');
+namin.addEventListener('input',function(){
+    nami.textContent=namin.value;
+})
+labin.addEventListener('input',function(){
+    pain.textContent=labin.value;
+})
+
+//<!--Form Validation using constraints-->
+const validname=document.getElementById('validname');
+const valname=document.getElementById('valname');
+const validpass=document.getElementById('validpass');
+const valpass=document.getElementById('valpass');
+const checknam=document.getElementById('checknam');
+const checkpass=document.getElementById('checkpass');
+
+
+validname.addEventListener('input',function(){
+    valname.textContent=validname.value;
+    if(!validname.value.includes('@') || !validname.value.includes('.')){
+      checknam.textContent="enter valid username";
+      checknam.style.color="red";
+    }
+    else{
+        checknam.textContent="valid username";
+        checknam.style.color="green";
+    }
+})
+validpass.addEventListener('input',function(){
+    
+let hasupper=/[A-Z]/.test(validpass.value);
+let haslower=/[a-z]/.test(validpass.value);
+let hasdigit=/\d/.test(validpass.value);
+let hasspecial=/[~!@#$%^&*()_+=-`]/.test(validpass.value);
+     valpass.textContent=validpass.value;
+    if(!hasupper || !haslower || !hasdigit || !hasspecial|| validpass.value.length<10){
+    checkpass.textContent="invalid password";
+    checkpass.style.color="red";
+    }
+    else{
+        checkpass.textContent="valid password";
+        checkpass.style.color="green";
+    }
+})
+
+function tog(){
+const toggle=document.getElementById('toggle');
+const body=document.querySelector('body');
+toggle.addEventListener('click',function(){
+    if(body.style.backgroundColor==='white'){
+        body.style.backgroundColor='black';
+        body.style.color='white';
+    }
+    else if(body.style.backgroundColor==='black'){
+        body.style.backgroundColor='white';
+        body.style.color='black';
+    }
+})
+}
+
+   </script>
+</html>
